@@ -33,9 +33,7 @@ extern "C" {
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */
-#define STEP(x) ((x)? (LL_GPIO_ResetOutputPin (PULSE_GPIO_Port, PULSE_Pin)) : (LL_GPIO_SetOutputPin(PULSE_GPIO_Port, PULSE_Pin)))
-#define DIR_DRIVE(x) ((x)? (LL_GPIO_SetOutputPin (DIR_GPIO_Port, DIR_Pin)) : (LL_GPIO_ResetOutputPin(DIR_GPIO_Port, DIR_Pin)))
-#define DRIVE_ENABLE(x) ((x)? (LL_GPIO_SetOutputPin (EN_DRIVE_GPIO_Port, EN_DRIVE_Pin)) : (LL_GPIO_ResetOutputPin(EN_DRIVE_GPIO_Port, EN_DRIVE_Pin)))
+#define DRIVE_ENABLE(x) ((x)? (LL_GPIO_ResetOutputPin (EN_DRIVE_GPIO_Port, EN_DRIVE_Pin)) : (LL_GPIO_SetOutputPin(EN_DRIVE_GPIO_Port, EN_DRIVE_Pin)))
 /* USER CODE END Private defines */
 
 void MX_GPIO_Init(void);

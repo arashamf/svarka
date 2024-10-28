@@ -60,15 +60,11 @@ typedef union
 typedef enum 
 {
 	NO_KEY 						= 	0x00,			//кнопка не нажата	
-	KEY_LEFT 					= 	0x01,			//левая кнопка
-	KEY_CENTER_SHORT 	= 	0x02,			//короткое нажатие центральной кнопки
-	KEY_CENTER_LONG 	= 	0x03,			//длинное нажатие центральной кнопки
-	KEY_RIGHT					= 	0x04, 		//правая кнопка
-	KEY_ENC_SHORT			= 	0x05,			//короткое нажатие кнопки энкодера
-	KEY_ENC_LONG			=		0x06,			//длинное нажатие кнопки энкодера
-	KEY_MODE_SHORT		=		0x07,			//короткое нажатие выбора режима
-	KEY_MODE_LONG			=		0x08,			//короткое нажатие выбора режима
-} KEY_CODE_t; 					
+	KEY_PEDAL_SHORT 	= 	0x01,			//короткое нажатие педали
+	KEY_PEDAL_LONG 		= 	0x02,			//длинное нажатие педали
+	KEY_ENC_SHORT		=			0x03,			//короткое нажатие энкодера
+	KEY_ENC_LONG			=		0x04,			//короткое нажатие энкодера
+} KEY_CODE_t; 						
 
 //-----------------------------------------------------------------------------------//
 typedef enum 
@@ -113,6 +109,8 @@ struct KEY_MACHINE_t
 #define 	CIRCLE_IN_SEC					(STEP18_IN_SEC*CIRCLE_IN_STEP)	//количество секунд в одном полном обороте двигателя (360 гр)
 #define 	SECOND_PER_MINUTE 		(60UL)
 #define 	SECOND_PER_DEGREE 		(3600UL)
+
+#define 	PWM_TIM 							TIM14
 // Private variables -----------------------------------------------------------//
 
 #ifdef __cplusplus

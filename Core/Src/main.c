@@ -30,6 +30,7 @@
 #include "drive.h"
 #include "eeprom.h"
 #include "angle_calc.h"
+#include "stanok_math.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,32 +97,34 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
-	encoder_init();
-	timers_ini ();
-	
+	timers_ini ();	
 	ssd1306_Init();
-	delay_us (10000); //10 мс задержка
-	
-	DRIVE_ENABLE(OFF); //отключение привода
+	delay_us (1000); //1 мс задержка
 	number_turns.TurnInMinute = 10;
-	
-//	EEPROM_ReadBytes (EEPROM_MEMORY_PAGE, eeprom_tx_buffer, (EEPROM_NUMBER_BYTES));
-//	turns_from_EEPROMbuf (&number_turns, eeprom_tx_buffer); //инициализация и конвертация угловых данных установки поворота в структуру
 	default_screen (&number_turns, &Font_16x26);
-	delay_us (10000); //10 мс задержка
+	calc_period_pulse (&number_turns); //расчёт периода импульса
 	
-	LL_TIM_SetPrescaler(TIM14, (TIMER_CLOCK_PRESCALER-1));
-	LL_TIM_OC_SetCompareCH1(TIM14, (500-1));
-	LL_TIM_SetAutoReload (TIM14, (1000-1));
-	LL_TIM_CC_EnableChannel(TIM14, LL_TIM_CHANNEL_CH1); 
-  LL_TIM_EnableCounter(TIM14);	//включение таймера 14 для генерации ШИМ*/
+	while (1) //ожидание нажатие педали
+	{
+		if (scan_keys ()== KEY_PEDAL_LONG)
+		{
+			turn_drive_start (&number_turns);
+			break;
+		}
+		setup_turn ( &encoder_data, &number_turns);
+	}
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		switch_mode ( &encoder_data, &number_turns);
+		if (setup_turn ( &encoder_data, &number_turns) == ON)
+		{
+			turn_drive_stop ();
+			turn_drive_start (&number_turns);
+		}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

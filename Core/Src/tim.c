@@ -29,7 +29,7 @@ static void tim_delay_init (void);
 static void timer_bounce_init (void);
 
 // Variables -----------------------------------------------------------------//
-uint8_t end_bounce = 0;
+uint8_t end_bounce = 0; //флаг окончания дребезга
 /* USER CODE END 0 */
 
 /* TIM3 init function */
@@ -52,21 +52,21 @@ void MX_TIM3_Init(void)
   PA6   ------> TIM3_CH1
   PA7   ------> TIM3_CH2
   */
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_6;
+  GPIO_InitStruct.Pin = ENC_CH1_Pin;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
   GPIO_InitStruct.Pull = LL_GPIO_PULL_DOWN;
   GPIO_InitStruct.Alternate = LL_GPIO_AF_1;
-  LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  LL_GPIO_Init(ENC_CH1_GPIO_Port, &GPIO_InitStruct);
 
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_7;
+  GPIO_InitStruct.Pin = ENC_CH2_Pin;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
   GPIO_InitStruct.Pull = LL_GPIO_PULL_DOWN;
   GPIO_InitStruct.Alternate = LL_GPIO_AF_1;
-  LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  LL_GPIO_Init(ENC_CH2_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN TIM3_Init 1 */
 
@@ -74,11 +74,11 @@ void MX_TIM3_Init(void)
   LL_TIM_SetEncoderMode(TIM3, LL_TIM_ENCODERMODE_X2_TI1);
   LL_TIM_IC_SetActiveInput(TIM3, LL_TIM_CHANNEL_CH1, LL_TIM_ACTIVEINPUT_DIRECTTI);
   LL_TIM_IC_SetPrescaler(TIM3, LL_TIM_CHANNEL_CH1, LL_TIM_ICPSC_DIV1);
-  LL_TIM_IC_SetFilter(TIM3, LL_TIM_CHANNEL_CH1, LL_TIM_IC_FILTER_FDIV1);
+  LL_TIM_IC_SetFilter(TIM3, LL_TIM_CHANNEL_CH1, LL_TIM_IC_FILTER_FDIV1_N2);
   LL_TIM_IC_SetPolarity(TIM3, LL_TIM_CHANNEL_CH1, LL_TIM_IC_POLARITY_RISING);
   LL_TIM_IC_SetActiveInput(TIM3, LL_TIM_CHANNEL_CH2, LL_TIM_ACTIVEINPUT_DIRECTTI);
   LL_TIM_IC_SetPrescaler(TIM3, LL_TIM_CHANNEL_CH2, LL_TIM_ICPSC_DIV1);
-  LL_TIM_IC_SetFilter(TIM3, LL_TIM_CHANNEL_CH2, LL_TIM_IC_FILTER_FDIV1);
+  LL_TIM_IC_SetFilter(TIM3, LL_TIM_CHANNEL_CH2, LL_TIM_IC_FILTER_FDIV1_N4);
   LL_TIM_IC_SetPolarity(TIM3, LL_TIM_CHANNEL_CH2, LL_TIM_IC_POLARITY_RISING);
   TIM_InitStruct.Prescaler = 0;
   TIM_InitStruct.CounterMode = LL_TIM_COUNTERMODE_UP;
@@ -143,6 +143,24 @@ void MX_TIM14_Init(void)
 }
 
 /* USER CODE BEGIN 1 */
+//-----------------------------------------------------------------------------------------------------//
+void drive_PWM_start (turn_data_t * handle) 
+{
+	LL_TIM_DisableCounter(PWM_TIM); //отключение таймера
+	LL_TIM_OC_SetCompareCH1(PWM_TIM, handle->PulsePeriod/2); //установка регистра сравнения (скважность)
+	LL_TIM_SetAutoReload (PWM_TIM, handle->PulsePeriod); //установка периода импульса
+	LL_TIM_SetCounter(PWM_TIM, 0); //сброс счётчика таймера
+	LL_TIM_CC_EnableChannel(PWM_TIM, LL_TIM_CHANNEL_CH1); //включение канала 1 таймера
+  LL_TIM_EnableCounter(PWM_TIM);	//включение таймера  для генерации ШИМ
+}
+
+//-----------------------------------------------------------------------------------------------------//
+void drive_PWM_stop (void)
+{
+	LL_TIM_DisableCounter(PWM_TIM); //отключение таймера
+	LL_TIM_CC_DisableChannel(PWM_TIM, LL_TIM_CHANNEL_CH1); //включение канала 1 таймера
+}
+
 //-----------------------------------------------------------------------------------------------------//
 void encoder_init(void) 
 {
@@ -224,10 +242,7 @@ void TIM17_IRQHandler(void)
 //-----------------------------------------------------------------------------------------------------//
 void timers_ini (void)
 {
-	/*LL_TIM_OC_SetCompareCH1(TIM14, 500);
-	LL_TIM_CC_EnableChannel(TIM14, LL_TIM_CHANNEL_CH1); 
-  LL_TIM_EnableCounter(TIM14);	//включение таймера 14 для генерации ШИМ*/
-	
+	encoder_init(); //инициализация таймера энкодера
 	tim_delay_init(); 		//инициализация TIM16 для микросекундных задержек
 	timer_bounce_init();	//инициализация TIM17	для отчёта задержек дребезга кнопок 							
 }

@@ -503,7 +503,14 @@ void SSD1306_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, SSD1306_COLOR_t
 void default_screen (turn_data_t * HandleTurnData, FontDef_t * font)
 {
 	SSD1306_GotoXY(LCD_DEFAULT_X_SIZE, LCD_DEFAULT_Y_SIZE);
-	snprintf ((char *)LCD_buff, LCD_BUFFER_SIZE, " %03d", HandleTurnData->TurnInMinute);
+	if (HandleTurnData->TurnInMinute < 100)
+	{	snprintf ((char *)LCD_buff, LCD_BUFFER_SIZE, "0.%02d", HandleTurnData->TurnInMinute);	}
+	else
+	{
+		if (HandleTurnData->TurnInMinute >= 100)
+		{	snprintf ((char *)LCD_buff, LCD_BUFFER_SIZE, "%d.%02d", HandleTurnData->TurnInMinute/100, HandleTurnData->TurnInMinute%100);	}
+	}
+	//SSD1306_Clear_Screen ();
 	SSD1306_Puts (LCD_buff, font, SSD1306_COLOR_WHITE);
 	SSD1306_UpdateScreen();
 }

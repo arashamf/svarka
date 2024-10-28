@@ -43,4 +43,5 @@ svarka/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Core\Inc\main.h ..\Core\Inc\i2c.h ..\Core\Inc\tim.h \
   ..\Core\Inc\gpio.h ..\Core\Inc\typedef.h ..\display\ssd1306.h \
   ..\display\fonts.h ..\display\ssd1306_interface.h ..\Core\Inc\button.h \
-  ..\Core\Inc\drive.h ..\Core\Inc\eeprom.h ..\Core\Inc\angle_calc.h
+  ..\Core\Inc\drive.h ..\Core\Inc\eeprom.h ..\Core\Inc\angle_calc.h \
+  ..\Core\Inc\stanok_math.h

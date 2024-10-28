@@ -15,15 +15,9 @@
 //--------------------------------------------------------------------------------------------//
 void calc_period_pulse (turn_data_t * handle)
 {
-	uint32_t timer_period_reload = 0;
+	//uint32_t timer_period_reload = 0;
 	handle->PulseInSecond = ((handle->TurnInMinute)*STEPS_IN_REV*REDUCER)/(SECOND_PER_MINUTE*100); //частота сигнала
 	handle->PulsePeriod = 1000000/handle->PulseInSecond;	//период сигнала
-	LL_TIM_DisableCounter(TIM14);
-	LL_TIM_OC_SetCompareCH1(TIM14, handle->PulsePeriod/2);
-	LL_TIM_SetAutoReload (TIM14, handle->PulsePeriod);
-	LL_TIM_SetCounter(TIM14, 0);
-	LL_TIM_CC_EnableChannel(TIM14, LL_TIM_CHANNEL_CH1); 
-  LL_TIM_EnableCounter(TIM14);	//включение таймера 14 для генерации ШИМ*/
 }
 
 //--------------------------------------------------------------------------------------------//

@@ -14,7 +14,7 @@ static struct KEY_MACHINE_t Key_Machine;
 #define COUNT_REPEAT_BUTTON 	5
 
 // Prototypes ----------------------------------------------------------------//
-static uint8_t scan_buttons_GPIO (void);
+static uint8_t scan_buttons_GPIO (uint16_t );
 
 // Private variables --------------------------------------------------------//
 uint8_t count_autorepeat = 0; //подсчёт удержания кнопки
@@ -29,10 +29,18 @@ uint16_t scan_keys (void)
 	
 	if(key_state == KEY_STATE_OFF) //стадия ожидания нажатия кнопки
 	{
-		if(LL_GPIO_IsInputPinSet(ENCODER_BTN_GPIO_Port, ENCODER_BTN_Pin) == 1)	//если кнопка была нажата - получение кода нажатой кнопки
+		if(LL_GPIO_IsInputPinSet(ENCODER_BTN_GPIO_Port, ENCODER_BTN_Pin) == ON)	//если кнопка была нажата - получение кода нажатой кнопки
 		{
 			key_state =  KEY_STATE_ON; //переход в режим нажатия кнопки
 			key_code = KEY_ENC_SHORT;
+		}
+		else
+		{
+			if (LL_GPIO_IsInputPinSet(PEDAL_GPIO_Port, PEDAL_Pin) == ON)
+			{
+				key_state =  KEY_STATE_ON; //переход в режим нажатия кнопки
+				key_code = KEY_PEDAL_SHORT;
+			}
 		}
 	}
 	
@@ -47,7 +55,7 @@ uint16_t scan_keys (void)
 		if (end_bounce == SET) //если флаг окончания дребезга установлен
 		{
 			end_bounce = RESET;  //сброс флага
-			if(scan_buttons_GPIO() == 0)	 // если кнопка отпущена (нажатие менее 50 мс это дребезг)
+			if(scan_buttons_GPIO(key_code) == 0)	 // если кнопка отпущена (нажатие менее 50 мс это дребезг)
 			{
 				key_state = KEY_STATE_OFF; //переход в начальное состояние ожидания нажатия кнопки
 				return NO_KEY; //возврат 0 (фильтр дребезга)
@@ -66,7 +74,7 @@ uint16_t scan_keys (void)
 		if (end_bounce == SET) //если флаг окончания дребезга установлен (устанавливается в прерывании таймера)
 		{
 			end_bounce = RESET; //сброс флага
-			if(scan_buttons_GPIO() == 0)	 // если кнопка была отпущена (короткое нажатие кнопки < 150 мс)
+			if(scan_buttons_GPIO(key_code) == OFF)	 // если кнопка была отпущена (короткое нажатие кнопки < 150 мс)
 			{
 				key_state = KEY_STATE_OFF; //переход в начальное состояние ожидания нажатия кнопки
 				return key_code; //возврата номера кнопки
@@ -81,6 +89,10 @@ uint16_t scan_keys (void)
 					{						
 						case KEY_ENC_SHORT:
 							key_code = KEY_ENC_LONG;	
+							break;
+						
+						case KEY_PEDAL_SHORT:
+							key_code = KEY_PEDAL_LONG;	
 							break;
 						
 						default:
@@ -101,7 +113,7 @@ uint16_t scan_keys (void)
 		{
 			key_code = NO_KEY;
 			end_bounce = RESET; //сброс флага
-			if(scan_buttons_GPIO() == 0)	 // если кнопка была отпущена (короткое нажатие кнопки < 150 мс)
+			if(scan_buttons_GPIO(key_code) == 0)	 // если кнопка была отпущена (короткое нажатие кнопки < 150 мс)
 			{
 				key_state = KEY_STATE_OFF; //переход в начальное состояние ожидания нажатия кнопки
 			}
@@ -116,13 +128,34 @@ uint16_t scan_keys (void)
 }
 
 //-------------------------------------------------------------------------------------------------//
-static uint8_t scan_buttons_GPIO (void)
+static uint8_t scan_buttons_GPIO (uint16_t key_code)
 {
-	return ((LL_GPIO_IsInputPinSet(RIGHT_BTN_GPIO_Port, RIGHT_BTN_Pin)) 		|| 
-					(LL_GPIO_IsInputPinSet(CENTER_BTN_GPIO_Port, CENTER_BTN_Pin)) 	|| 
-					(LL_GPIO_IsInputPinSet(LEFT_BTN_GPIO_Port, LEFT_BTN_Pin)) 			||
-					(LL_GPIO_IsInputPinSet(ENCODER_BTN_GPIO_Port, ENCODER_BTN_Pin)) ||
-					(LL_GPIO_IsInputPinSet(MODE_BTN_GPIO_Port, MODE_BTN_Pin))) 			; 																																		
+	uint8_t pin_status = OFF;
+	
+	switch (key_code)
+	{
+		case KEY_ENC_SHORT:
+			if ((LL_GPIO_IsInputPinSet(ENCODER_BTN_GPIO_Port, ENCODER_BTN_Pin))	== ON)
+				pin_status = ON;
+			break;
+						
+		case KEY_ENC_LONG:
+			if ((LL_GPIO_IsInputPinSet(ENCODER_BTN_GPIO_Port, ENCODER_BTN_Pin))	== ON)
+				pin_status = ON;
+			break;	
+		
+		case KEY_PEDAL_SHORT:
+			if ((LL_GPIO_IsInputPinSet(PEDAL_GPIO_Port, PEDAL_Pin))	== OFF)
+				pin_status = ON;
+			break;
+						
+		case KEY_PEDAL_LONG:
+			if ((LL_GPIO_IsInputPinSet(PEDAL_GPIO_Port, PEDAL_Pin))	== OFF)
+				pin_status = ON;
+			break;
+	}
+	return 	((LL_GPIO_IsInputPinSet(PEDAL_GPIO_Port, PEDAL_Pin)) 		|| 
+					(LL_GPIO_IsInputPinSet(ENCODER_BTN_GPIO_Port, ENCODER_BTN_Pin))); 																																		
 }
 
 //-------------------------------------------------------------------------------------------------//

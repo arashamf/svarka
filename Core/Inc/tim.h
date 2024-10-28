@@ -29,7 +29,8 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+void drive_PWM_start (turn_data_t * ) ;
+void drive_PWM_stop (void) ;
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */

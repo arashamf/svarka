@@ -13,6 +13,9 @@ extern "C" {
 
 // Prototypes ------------------------------------------------------------------//
 void setup_enc_data (encoder_data_t * , turn_data_t * );
+uint8_t setup_turn (encoder_data_t * , turn_data_t * );
+void turn_drive_start (turn_data_t * );
+void turn_drive_stop (void);
 void encoder_reset (encoder_data_t * ) ;
 
 // Variables ------------------------------------------------------------------//

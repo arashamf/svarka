@@ -71,22 +71,18 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define MODE_BTN_Pin LL_GPIO_PIN_0
-#define MODE_BTN_GPIO_Port GPIOF
-#define IN2_Pin LL_GPIO_PIN_1
-#define IN2_GPIO_Port GPIOF
-#define LEFT_BTN_Pin LL_GPIO_PIN_0
-#define LEFT_BTN_GPIO_Port GPIOA
-#define CENTER_BTN_Pin LL_GPIO_PIN_1
-#define CENTER_BTN_GPIO_Port GPIOA
-#define RIGHT_BTN_Pin LL_GPIO_PIN_2
-#define RIGHT_BTN_GPIO_Port GPIOA
+#define PEDAL_Pin LL_GPIO_PIN_0
+#define PEDAL_GPIO_Port GPIOF
 #define ENCODER_BTN_Pin LL_GPIO_PIN_3
 #define ENCODER_BTN_GPIO_Port GPIOA
 #define PULSE_Pin LL_GPIO_PIN_4
 #define PULSE_GPIO_Port GPIOA
 #define DIR_Pin LL_GPIO_PIN_5
 #define DIR_GPIO_Port GPIOA
+#define ENC_CH1_Pin LL_GPIO_PIN_6
+#define ENC_CH1_GPIO_Port GPIOA
+#define ENC_CH2_Pin LL_GPIO_PIN_7
+#define ENC_CH2_GPIO_Port GPIOA
 #define EN_DRIVE_Pin LL_GPIO_PIN_1
 #define EN_DRIVE_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
