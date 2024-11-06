@@ -12,12 +12,9 @@ extern "C" {
 // Defines ---------------------------------------------------------------------//
 
 // Prototypes ------------------------------------------------------------------//
-void setup_enc_data (encoder_data_t * , turn_data_t * );
+void drive_init ( turn_data_t * HandleTurnData );
 uint8_t setup_turn (encoder_data_t * , turn_data_t * );
-void turn_drive_start (turn_data_t * );
-void turn_drive_stop (void);
-void encoder_reset (encoder_data_t * ) ;
-
+void main_loop (encoder_data_t * , turn_data_t * );
 // Variables ------------------------------------------------------------------//
 extern __IO uint32_t need_step;
 

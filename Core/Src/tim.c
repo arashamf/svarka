@@ -21,15 +21,18 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
-#include "typedef.h"
 #include "ssd1306.h"
 
 // Prototypes ------------------------------------------------------------------//
+static void encoder_init(void) ;
 static void tim_delay_init (void);
 static void timer_bounce_init (void);
 
 // Variables -----------------------------------------------------------------//
-uint8_t end_bounce = 0; //флаг окончания дребезга
+volatile uint8_t end_bounce_pedal = 0; //флаг окончания дребезга педали
+volatile uint8_t end_bounce_toogle = 0; //флаг окончания дребезга тумблера выбора направления вращения
+uint16_t delay_ms = 0;
+
 /* USER CODE END 0 */
 
 /* TIM3 init function */
@@ -144,14 +147,22 @@ void MX_TIM14_Init(void)
 
 /* USER CODE BEGIN 1 */
 //-----------------------------------------------------------------------------------------------------//
-void drive_PWM_start (turn_data_t * handle) 
+void drive_PWM_start (uint16_t PulsePeriod) 
 {
 	LL_TIM_DisableCounter(PWM_TIM); //отключение таймера
-	LL_TIM_OC_SetCompareCH1(PWM_TIM, handle->PulsePeriod/2); //установка регистра сравнения (скважность)
-	LL_TIM_SetAutoReload (PWM_TIM, handle->PulsePeriod); //установка периода импульса
+	LL_TIM_OC_SetCompareCH1(PWM_TIM, PulsePeriod/2); //установка регистра сравнения (скважность)
+	LL_TIM_SetAutoReload (PWM_TIM, PulsePeriod); //установка периода импульса
 	LL_TIM_SetCounter(PWM_TIM, 0); //сброс счётчика таймера
 	LL_TIM_CC_EnableChannel(PWM_TIM, LL_TIM_CHANNEL_CH1); //включение канала 1 таймера
   LL_TIM_EnableCounter(PWM_TIM);	//включение таймера  для генерации ШИМ
+}
+
+//-----------------------------------------------------------------------------------------------------//
+void drive_PWM_mod (uint16_t PulsePeriod) 
+{
+	LL_TIM_OC_SetCompareCH1(PWM_TIM, PulsePeriod/2); //установка регистра сравнения (скважность)
+	LL_TIM_SetAutoReload (PWM_TIM, PulsePeriod); //установка периода импульса
+	LL_TIM_SetCounter(PWM_TIM, 0); //сброс счётчика таймера
 }
 
 //-----------------------------------------------------------------------------------------------------//
@@ -165,37 +176,37 @@ void drive_PWM_stop (void)
 void encoder_init(void) 
 {
     
-  LL_TIM_SetCounter(TIM3, 32767); // начальное значение счетчика:
+  LL_TIM_SetCounter(ENC_TIM, 32767); // начальное значение счетчика:
 	
-	LL_TIM_CC_EnableChannel(TIM3,LL_TIM_CHANNEL_CH1); //Enable the encoder interface channels 
-	LL_TIM_CC_EnableChannel(TIM3,LL_TIM_CHANNEL_CH2);
+	LL_TIM_CC_EnableChannel(ENC_TIM, LL_TIM_CHANNEL_CH1); //Enable the encoder interface channels 
+	LL_TIM_CC_EnableChannel(ENC_TIM, LL_TIM_CHANNEL_CH2);
 
-  LL_TIM_EnableCounter(TIM3);     // включение таймера
+  LL_TIM_EnableCounter(ENC_TIM);     // включение таймера
 }
 
 //-----------------------------------------------------------------------------------------------------//
 void tim_delay_init (void)
 {
 	LL_TIM_InitTypeDef TIM_InitStruct = {0};
-	LL_APB1_GRP2_EnableClock(LL_APB1_GRP2_PERIPH_TIM16); // Peripheral clock enable 
+	LL_APB1_GRP2_EnableClock(TIM_DELAY_APB1_BIT); // Peripheral clock enable 
 
   TIM_InitStruct.Prescaler = (uint16_t)((CPU_CLOCK/1000000)-1); //предделитель 48МГц/48=1МГц
   TIM_InitStruct.CounterMode = LL_TIM_COUNTERMODE_UP;
   TIM_InitStruct.Autoreload = 0xFF;
   TIM_InitStruct.ClockDivision = LL_TIM_CLOCKDIVISION_DIV1;
-  LL_TIM_Init(TIM16, &TIM_InitStruct);
-  LL_TIM_DisableARRPreload(TIM16);
+  LL_TIM_Init(TIM_DELAY, &TIM_InitStruct);
+  LL_TIM_DisableARRPreload(TIM_DELAY);
 }
 
 //-----------------------------------------------------------------------------------------------------//
 void delay_us(uint16_t delay)
 {
-  LL_TIM_SetAutoReload(TIM16, delay); //
-	LL_TIM_ClearFlag_UPDATE(TIM16); //сброс флага обновления таймера
-	LL_TIM_SetCounter(TIM16, 0); //сброс счётного регистра
-	LL_TIM_EnableCounter(TIM16); //включение таймера
-	while (LL_TIM_IsActiveFlag_UPDATE(TIM16) == 0) {} //ожидание установки флага обновления таймера 
-	LL_TIM_DisableCounter(TIM16); //выключение таймера		
+  LL_TIM_SetAutoReload(TIM_DELAY, delay); //
+	LL_TIM_ClearFlag_UPDATE(TIM_DELAY); //сброс флага обновления таймера
+	LL_TIM_SetCounter(TIM_DELAY, 0); //сброс счётного регистра
+	LL_TIM_EnableCounter(TIM_DELAY); //включение таймера
+	while (LL_TIM_IsActiveFlag_UPDATE(TIM_DELAY) == 0) {} //ожидание установки флага обновления таймера 
+	LL_TIM_DisableCounter(TIM_DELAY); //выключение таймера		
 }
 
 //-----------------------------------------------------------------------------------------------------//
@@ -203,40 +214,58 @@ void timer_bounce_init (void)
 {
 	LL_TIM_InitTypeDef TIM_InitStruct = {0};
 
-  LL_APB1_GRP2_EnableClock(LL_APB1_GRP2_PERIPH_TIM17);   // Peripheral clock enable 
+  LL_APB1_GRP2_EnableClock(TIM_BOUNCE_PEDAL_APB1_BIT);   // Peripheral clock enable 
 
   TIM_InitStruct.Prescaler = (uint16_t)((CPU_CLOCK/2000)-1); //предделитель 48МГц/24000=2КГц
   TIM_InitStruct.CounterMode = LL_TIM_COUNTERMODE_UP;
   TIM_InitStruct.Autoreload = 0xFFFF;
   TIM_InitStruct.ClockDivision = LL_TIM_CLOCKDIVISION_DIV1;
   TIM_InitStruct.RepetitionCounter = 0;
-  LL_TIM_Init(TIM17, &TIM_InitStruct);
-  LL_TIM_DisableARRPreload(TIM17);	
+  LL_TIM_Init(TIM_BOUNCE_PEDAL, &TIM_InitStruct);
+  LL_TIM_DisableARRPreload(TIM_BOUNCE_PEDAL);	
 	
-	LL_TIM_ClearFlag_UPDATE(TIM17); //сброс флага обновления таймера
-	LL_TIM_EnableIT_UPDATE(TIM17);
-	NVIC_SetPriority(TIM17_IRQn, 0);
-  NVIC_EnableIRQ(TIM17_IRQn);
+	LL_TIM_ClearFlag_UPDATE(TIM_BOUNCE_PEDAL); //сброс флага обновления таймера
+	LL_TIM_EnableIT_UPDATE(TIM_BOUNCE_PEDAL);
+	NVIC_SetPriority(TIM_BOUNCE_PEDAL_IRQn, 0);
+  NVIC_EnableIRQ(TIM_BOUNCE_PEDAL_IRQn);
 }
 
 //-----------------------------------------------------------------------------------------------------//
 void repeat_time (uint16_t delay)
 {
-  LL_TIM_SetAutoReload(TIM17, 2*delay); //
-	LL_TIM_SetCounter(TIM17, 0); //сброс счётного регистра
-	LL_TIM_ClearFlag_UPDATE(TIM17); //сброс флага обновления таймера
-	LL_TIM_EnableCounter(TIM17); //включение таймера	
+  LL_TIM_SetAutoReload(TIM_BOUNCE_PEDAL, 2*delay); //
+	LL_TIM_SetCounter(TIM_BOUNCE_PEDAL, 0); //сброс счётного регистра
+	LL_TIM_ClearFlag_UPDATE(TIM_BOUNCE_PEDAL); //сброс флага обновления таймера
+	LL_TIM_EnableCounter(TIM_BOUNCE_PEDAL); //включение таймера	
 }
 
 //-----------------------------------------------------------------------------------------------------//
-void TIM17_IRQHandler(void)
+void TIM_BOUNCE_PEDAL_IRQHandler (void)
 {
-	if (LL_TIM_IsActiveFlag_UPDATE(TIM17) == SET)
+	if (LL_TIM_IsActiveFlag_UPDATE(TIM_BOUNCE_PEDAL) == SET)
 	{	
-		LL_TIM_ClearFlag_UPDATE (TIM17); //сброс флага обновления таймера
-		LL_TIM_DisableCounter(TIM17); //выключение таймера
-		end_bounce = SET; //установка флага окончания ожидания прекращения дребезга
+		LL_TIM_ClearFlag_UPDATE (TIM_BOUNCE_PEDAL); //сброс флага обновления таймера
+		LL_TIM_DisableCounter(TIM_BOUNCE_PEDAL); //выключение таймера
+		end_bounce_pedal = SET; //установка флага окончания ожидания прекращения дребезга
 	}
+}
+
+//-----------------------------------------------------------------------------------------------------//
+void TIM_Bounce_DirToogle_init (uint16_t bounce_delay)
+{
+	delay_ms = bounce_delay ;
+	end_bounce_toogle = RESET;
+}
+
+//-----------------------------------------------------------------------------------------------------//
+void Bounce_DirToogle_Callback (void)
+{
+	if(delay_ms > 0)  
+	{	
+		delay_ms--;	
+	}
+	else
+	{	end_bounce_toogle = SET;	}
 }
 
 //-----------------------------------------------------------------------------------------------------//

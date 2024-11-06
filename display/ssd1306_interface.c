@@ -7,7 +7,7 @@
 #define SSD1306_I2C_TIMEOUT                                	0xFF
 
 /* Private typedef -----------------------------------------------------------*/
-extern I2C_HandleTypeDef hi2c1;
+//extern I2C_HandleTypeDef hi2c1;
 extern SSD1306_State SSD1306_state;
 
 /* Private variables ---------------------------------------------------------*/
@@ -44,7 +44,7 @@ void ssd1306_SendDataBuffer(uint8_t *data, uint16_t data_size)
 }
 
 /*----------------------------------------------------------------------------*/
-void HAL_I2C_MemTxCpltCallback(I2C_HandleTypeDef *hi2c)
+void HAL_I2C_MemTxCpltCallback(void)
 {
  // SSD1306_state = SSD1306_READY;
 }

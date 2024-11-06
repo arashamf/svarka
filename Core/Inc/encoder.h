@@ -1,6 +1,6 @@
 
-#ifndef __STANOK_MATH_H__
-#define __STANOK_MATH_H__
+#ifndef __ENCODER_H__
+#define __ENCODER_H__
 
 #ifdef __cplusplus
 extern "C" {
@@ -8,11 +8,13 @@ extern "C" {
 
 // Includes ---------------------------------------------------------------------//
 #include "main.h"
+#include "typedef.h"
 
 // Defines ---------------------------------------------------------------------//
 
 // Prototypes ------------------------------------------------------------------//
-void calc_period_pulse (turn_data_t * );
+void encoder_reset (encoder_data_t * );
+int32_t read_enc_data (encoder_data_t * , turn_data_t * );
 
 // Variables ------------------------------------------------------------------//
 

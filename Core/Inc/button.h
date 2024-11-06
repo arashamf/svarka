@@ -15,9 +15,9 @@ extern "C" {
 //Private defines ------------------------------------------------------------------//
 
 // Prototypes ---------------------------------------------------------------------//
-uint16_t scan_keys (void);
-void switch_mode (encoder_data_t * , turn_data_t * );
-
+uint16_t scan_pedal (void);
+uint8_t scan_direction (STATUS_FLAG_DRIVE_t * );
+uint8_t scan_dir_GPIO (void);
 #ifdef __cplusplus
 }
 #endif

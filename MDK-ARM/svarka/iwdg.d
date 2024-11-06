@@ -1,5 +1,4 @@
-svarka/stanok_math.o: ..\Core\Src\stanok_math.c ..\Core\Inc\stanok_math.h \
-  ..\Core\Inc\main.h \
+svarka/iwdg.o: ..\Core\Src\iwdg.c ..\Core\Inc\iwdg.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h \
   ..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h \
@@ -24,5 +23,4 @@ svarka/stanok_math.o: ..\Core\Src\stanok_math.c ..\Core\Inc\stanok_math.h \
   ..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h \
   ..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\Core\Inc\typedef.h \
-  ..\Core\Inc\typedef.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\Core\Inc\typedef.h

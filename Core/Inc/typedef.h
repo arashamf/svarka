@@ -12,24 +12,6 @@ extern "C" {
 // Exported types ---------------------------------------------------------------//
 typedef struct 
 {
-	//сохранение шага хода вала в формате гр/мин/сек/
-	uint16_t 	set_degree; 			//часть установленного шага вала в градусах
-	int8_t 		set_minute; 			//часть установленного шага вала в минутах
-	int8_t 		set_second; 			 //часть установленного шага вала в секундах
-	//текущее положение вала в формате гр/мин/сек/
-	uint16_t 	shaft_degree; 		//часть текущего положения вала в градусах
-	int8_t 		shaft_minute; 		//часть текущего положения  вала в минутах
-	int8_t 		shaft_second; 		//часть текущего положения  вала в секундах
-	
-	uint32_t 	StepAngleInSec;				//полный установленный шаг вала в секундах
-	uint32_t 	ShaftAngleInSec; 			//полное текущее положение вала в секундах
-	uint32_t 	SetShaftAngleInSec; 	//установленное положение вала в секундах
-	float mode1_error;
-} angular_data_t;
-
-//------------------------------------------------------------------------------//
-typedef struct 
-{
 	uint16_t 	PulsePeriod; 			//период импульса
 	uint32_t 	PulseInSecond;		//количество импульсов в секунду
 	uint16_t 	TurnInMinute;			//количество оборотов вала с учётом редуктора
@@ -40,7 +22,7 @@ typedef struct
 {
 	int32_t 	prevCounter_SetRotation; 			//сохранённое показание энкодера
 	int32_t 	currCounter_SetRotation; 			//текущее показание энкодера
-	int32_t delta;
+	int32_t 	delta;
 } encoder_data_t;
 
 //----------------------------------------------------------------------------------//
@@ -48,13 +30,13 @@ typedef union
 {
 	struct
 	{
-		uint8_t tool_mode			: 1;
-		uint8_t left_flag			: 1;
-		uint8_t right_flag		: 1;
-		uint8_t raw						:	5;
+		uint8_t pwm_on									: 1;
+		uint8_t currStatusDirToogle			: 1; //сохранённое показание тумблера выбора направления вращения
+		uint8_t prevStatusDirToogle			: 1; //текущее показание тумблера выбора направления вращения
+		uint8_t reserve									:	5;
 	};
 	uint8_t flag;
-}STATUS_FLAG_t;
+}STATUS_FLAG_DRIVE_t;
 
 //код нажатой кнопки----------------------------------------------------------------//
 typedef enum 
@@ -62,70 +44,79 @@ typedef enum
 	NO_KEY 						= 	0x00,			//кнопка не нажата	
 	KEY_PEDAL_SHORT 	= 	0x01,			//короткое нажатие педали
 	KEY_PEDAL_LONG 		= 	0x02,			//длинное нажатие педали
-	KEY_ENC_SHORT		=			0x03,			//короткое нажатие энкодера
-	KEY_ENC_LONG			=		0x04,			//короткое нажатие энкодера
+	KEY_DIR_SHORT		=			0x03,			//короткое нажатие тумблера выбора направления вращения вала
+	KEY_DIR_LONG			=		0x04,			//длинное нажатие тумблера выбора направления вращения вала
 } KEY_CODE_t; 						
 
-//-----------------------------------------------------------------------------------//
-typedef enum 
-{
-	KEY_STATE_OFF 				= 0	,			//режим - кнопка не нажата
-	KEY_STATE_ON							,			//режим - кнопка нажата
-	KEY_STATE_BOUNCE					, 		//режим -  дребезг кнопки
-	KEY_STATE_AUTOREPEAT			,	 		//режим - режим ожидания (автоповтора) отжатия кнопки
-	KEY_STATE_WAIT_TURNOFF
-} KEY_STATE_t; 										//статус сканирования клавиатуры
 
 //-----------------------------------------------------------------------------------//
 typedef enum 
 {
-	PEDAL_OFF 				= 	0x00,			//педаль не нажата	
-	PEDAL_ON 					= 	0x01,			//педаль нажата
-} STATUS_PEDAL_t; 	
+	STATE_PEDAL_OFF 						= 0	,				//режим - педаль не нажата							
+	STATE_PEDAL_BOUNCE							, 			//режим - дребезг педали
+	STATE_PEDAL_ON									,				//режим - педаль нажата 
+} STATUS_PEDAL_t; 												//состояние сканирования педали
 
 //-----------------------------------------------------------------------------------//
 typedef enum 
 {
-	STATE_PEDAL_OFF 						= 0	,			//режим - педаль не нажата							
-	STATE_PEDAL_BOUNCE							, 		//режим - дребезг педали
-	STATE_PEDAL_ON									,			//режим - педаль нажата 
-} PEDAL_STATE_t; 										//состояние сканирования педали
+	ST_DIR_SCAN 					= 	0,		 	//стадия - сканирование состояние тумблера			
+	ST_DIR_BOUNCE 						,				//стадия - ожидания окончания дребезга							
+} STATUS_DIR_t;
 
 //-----------------------------------------------------------------------------------//
-struct KEY_MACHINE_t
+typedef enum 
 {
-	KEY_CODE_t 		key_code;
-	KEY_STATE_t 	key_state;
-};
+	PWM_OFF				=				0,
+	PWM_ON								,
+	PWM_CONTINUE					,
+} DRIVE_INSTR_t;
+
+//-----------------------------------------------------------------------------------//
+typedef enum 
+{
+	DIR_REVERSE				=		0,
+	DIR_CONTINUE					,
+} DIR_INSTR_t;
 
 // Defines ----------------------------------------------------------------------//
-#define ON 												1
-#define OFF 											0
-#define FORWARD 									1
-#define BACKWARD 									0
-#define DISP_CLEAR 								1
-#define DISP_NOT_CLEAR 						0
-#define EEPROM_NUMBER_BYTES 			2
+#define 	ON 																1
+#define 	OFF 															0
+#define 	PEDAL_ON 													1
+#define 	PEDAL_OFF 												0
+#define 	CLOCKWISE 												1
+#define 	COUNTERCLOCKWISE 									0
+#define 	DISP_CLEAR 												1
+#define 	DISP_NO_CLEAR 										0
+#define 	EEPROM_NUMBER_BYTES								2
 
-#define CPU_CLOCK									(48000000UL)	// Частота контроллера 
-#define TIMER_CLOCK_PRESCALER			(CPU_CLOCK/1000000UL)
-#define TIMER_CLOCK								(CPU_CLOCK/TIMER_CLOCK_PRESCALER)
-#define TICKS_PER_SECOND					(1000UL) 
+#define 	CPU_CLOCK								(48000000UL)	// Частота контроллера 
+#define 	TIMER_CLOCK_PRESCALER		(CPU_CLOCK/1000000UL)
+#define 	TIMER_CLOCK							(CPU_CLOCK/TIMER_CLOCK_PRESCALER)
+#define 	TICKS_PER_SECOND				(1000UL) 
 
-#define STEP_TURN_SETUP 		(5UL) //шаг настройки количества оборотов в минуту
+#define 	KEY_BOUNCE_TIME 				50 				// время дребезга в мс
+#define 	KEY_AUTOREPEAT_TIME 		100 			// время автоповтора в мс
+#define 	COUNT_REPEAT_BUTTON 		5
 
-#define   REDUCER 					(80UL)			//делитель редуктора
-#define 	STEPS_IN_REV			(3200UL) 	//количество микрошагов в одном полном обороте (360 гр) с учётом делителя драйвера
-#define 	CIRCLE_IN_STEP		(200UL)		 	//количество шагов (1,8гр) в одном полном обороте (360 гр)
-#define 	STEP_DIV 					(STEPS_IN_REV/CIRCLE_IN_STEP)		//количество микрошагов (16) в одном шаге двигателя (1,8гр)
-#define 	STEP_TOOL					(STEPS_IN_REV*REDUCER) 					//количество микрошагов в одном полном обороте (360 гр) с учётом делителя драйвера и редуктора 
+#define 	STEP_TURN_SETUP 				(5UL) 		//шаг настройки количества оборотов в минуту
 
-#define 	STEP18_IN_SEC					(6480UL) 			//количество секунд в одном шаге двигателя (1,8гр)
-#define 	CIRCLE_IN_SEC					(STEP18_IN_SEC*CIRCLE_IN_STEP)	//количество секунд в одном полном обороте двигателя (360 гр)
-#define 	SECOND_PER_MINUTE 		(60UL)
-#define 	SECOND_PER_DEGREE 		(3600UL)
+#define   REDUCER 								(80UL)		//делитель редуктора
+#define 	STEPS_IN_REV						(3200UL) 	//количество микрошагов в одном полном обороте (360 гр) с учётом делителя драйвера
+#define 	CIRCLE_IN_STEP					(200UL)		//количество шагов (1,8гр) в одном полном обороте (360 гр)
+#define 	STEP_DIV 								(STEPS_IN_REV/CIRCLE_IN_STEP)	//количество микрошагов в одном шаге двигателя (1,8гр)
+#define 	STEP_TOOL								(STEPS_IN_REV*REDUCER) 				//количество микрошагов в одном полном обороте (360 гр) с учётом делителя драйвера и редуктора 
 
-#define 	PWM_TIM 							TIM14
+#define 	LOWER_LIMIT_SOFT_START	(260UL)		//нижний предел количества оборотов, при котором  включается плавный пуск
+#define 	LOWER_PERIOD_SOFT_START	(232UL)
+#define 	STEP_PERIOD_SOFT_START	(4UL)
+
+#define 	STEP18_IN_SEC						(6480UL) 			//количество секунд в одном шаге двигателя (1,8гр)
+#define 	CIRCLE_IN_SEC						(STEP18_IN_SEC*CIRCLE_IN_STEP)	//количество секунд в одном полном обороте двигателя (360 гр)
+#define 	SECOND_PER_MINUTE 			(60UL)
+#define 	SECOND_PER_DEGREE 			(3600UL)
+
+
 // Private variables -----------------------------------------------------------//
 
 #ifdef __cplusplus
