@@ -1966,48 +1966,48 @@ Image Symbol Table
     __arm_cp.0_0                             0x08001770   Number         4  main.o(.text.main)
     __arm_cp.0_1                             0x08001774   Number         4  main.o(.text.main)
     [Anonymous Symbol]                       0x08001778   Section        0  drive.o(.text.main_loop)
-    __arm_cp.7_0                             0x08001808   Number         4  drive.o(.text.main_loop)
-    [Anonymous Symbol]                       0x0800180c   Section        0  encoder.o(.text.read_enc_data)
-    __arm_cp.2_0                             0x08001868   Number         4  encoder.o(.text.read_enc_data)
-    [Anonymous Symbol]                       0x0800186c   Section        0  tim.o(.text.repeat_time)
-    [Anonymous Symbol]                       0x08001890   Section        0  button.o(.text.scan_dir_GPIO)
-    [Anonymous Symbol]                       0x080018a0   Section        0  button.o(.text.scan_direction)
-    __arm_cp.2_0                             0x08001914   Number         4  button.o(.text.scan_direction)
-    __arm_cp.2_1                             0x08001918   Number         4  button.o(.text.scan_direction)
-    [Anonymous Symbol]                       0x0800191c   Section        0  button.o(.text.scan_pedal)
-    __arm_cp.0_0                             0x080019a0   Number         4  button.o(.text.scan_pedal)
-    __arm_cp.0_1                             0x080019a4   Number         4  button.o(.text.scan_pedal)
-    __arm_cp.0_2                             0x080019a8   Number         4  button.o(.text.scan_pedal)
-    scan_pedal_GPIO                          0x080019ad   Thumb Code    14  button.o(.text.scan_pedal_GPIO)
-    [Anonymous Symbol]                       0x080019ac   Section        0  button.o(.text.scan_pedal_GPIO)
-    [Anonymous Symbol]                       0x080019bc   Section        0  drive.o(.text.setup_turn)
-    __arm_cp.3_0                             0x080019e0   Number         4  drive.o(.text.setup_turn)
-    [Anonymous Symbol]                       0x080019e4   Section        0  ssd1306.o(.text.ssd1306_Init)
-    __arm_cp.0_0                             0x08001a98   Number         4  ssd1306.o(.text.ssd1306_Init)
-    __arm_cp.0_1                             0x08001a9c   Number         4  ssd1306.o(.text.ssd1306_Init)
-    [Anonymous Symbol]                       0x08001aa0   Section        0  ssd1306_interface.o(.text.ssd1306_SendCommand)
-    __arm_cp.0_0                             0x08001ab4   Number         4  ssd1306_interface.o(.text.ssd1306_SendCommand)
-    [Anonymous Symbol]                       0x08001ab8   Section        0  ssd1306_interface.o(.text.ssd1306_SendDataBuffer)
-    tim_delay_init                           0x08001ac9   Thumb Code    56  tim.o(.text.tim_delay_init)
-    [Anonymous Symbol]                       0x08001ac8   Section        0  tim.o(.text.tim_delay_init)
-    __arm_cp.33_0                            0x08001b00   Number         4  tim.o(.text.tim_delay_init)
-    timer_bounce_init                        0x08001b05   Thumb Code    76  tim.o(.text.timer_bounce_init)
-    [Anonymous Symbol]                       0x08001b04   Section        0  tim.o(.text.timer_bounce_init)
-    __arm_cp.34_0                            0x08001b50   Number         4  tim.o(.text.timer_bounce_init)
-    __arm_cp.34_1                            0x08001b54   Number         4  tim.o(.text.timer_bounce_init)
-    __arm_cp.34_2                            0x08001b58   Number         4  tim.o(.text.timer_bounce_init)
-    [Anonymous Symbol]                       0x08001b5c   Section        0  tim.o(.text.timers_ini)
-    [Anonymous Symbol]                       0x08001b6c   Section        0  drive.o(.text.turn_drive_soft_start)
-    [Anonymous Symbol]                       0x08001ba6   Section        0  drive.o(.text.turn_drive_start)
-    [Anonymous Symbol]                       0x08001bb0   Section        0  drive.o(.text.turn_drive_stop)
-    .text_divfast                            0x08001bb8   Section      502  aeabi_sdivfast.o(.text_divfast)
-    i._is_digit                              0x08001dae   Section        0  __printf_wp.o(i._is_digit)
-    maptable                                 0x08001dbc   Data          17  __printf_flags_wp.o(.constdata)
-    .constdata                               0x08001dbc   Section       17  __printf_flags_wp.o(.constdata)
-    OFFSET_TAB_CCMRx                         0x080029ca   Data           7  tim.o(.rodata.OFFSET_TAB_CCMRx)
-    [Anonymous Symbol]                       0x080029ca   Section        0  tim.o(.rodata.OFFSET_TAB_CCMRx)
-    SHIFT_TAB_ICxx                           0x080029d1   Data           7  tim.o(.rodata.SHIFT_TAB_ICxx)
-    [Anonymous Symbol]                       0x080029d1   Section        0  tim.o(.rodata.SHIFT_TAB_ICxx)
+    __arm_cp.7_0                             0x0800180c   Number         4  drive.o(.text.main_loop)
+    [Anonymous Symbol]                       0x08001810   Section        0  encoder.o(.text.read_enc_data)
+    __arm_cp.2_0                             0x0800186c   Number         4  encoder.o(.text.read_enc_data)
+    [Anonymous Symbol]                       0x08001870   Section        0  tim.o(.text.repeat_time)
+    [Anonymous Symbol]                       0x08001894   Section        0  button.o(.text.scan_dir_GPIO)
+    [Anonymous Symbol]                       0x080018a4   Section        0  button.o(.text.scan_direction)
+    __arm_cp.2_0                             0x08001918   Number         4  button.o(.text.scan_direction)
+    __arm_cp.2_1                             0x0800191c   Number         4  button.o(.text.scan_direction)
+    [Anonymous Symbol]                       0x08001920   Section        0  button.o(.text.scan_pedal)
+    __arm_cp.0_0                             0x080019a4   Number         4  button.o(.text.scan_pedal)
+    __arm_cp.0_1                             0x080019a8   Number         4  button.o(.text.scan_pedal)
+    __arm_cp.0_2                             0x080019ac   Number         4  button.o(.text.scan_pedal)
+    scan_pedal_GPIO                          0x080019b1   Thumb Code    14  button.o(.text.scan_pedal_GPIO)
+    [Anonymous Symbol]                       0x080019b0   Section        0  button.o(.text.scan_pedal_GPIO)
+    [Anonymous Symbol]                       0x080019c0   Section        0  drive.o(.text.setup_turn)
+    __arm_cp.3_0                             0x080019e4   Number         4  drive.o(.text.setup_turn)
+    [Anonymous Symbol]                       0x080019e8   Section        0  ssd1306.o(.text.ssd1306_Init)
+    __arm_cp.0_0                             0x08001a9c   Number         4  ssd1306.o(.text.ssd1306_Init)
+    __arm_cp.0_1                             0x08001aa0   Number         4  ssd1306.o(.text.ssd1306_Init)
+    [Anonymous Symbol]                       0x08001aa4   Section        0  ssd1306_interface.o(.text.ssd1306_SendCommand)
+    __arm_cp.0_0                             0x08001ab8   Number         4  ssd1306_interface.o(.text.ssd1306_SendCommand)
+    [Anonymous Symbol]                       0x08001abc   Section        0  ssd1306_interface.o(.text.ssd1306_SendDataBuffer)
+    tim_delay_init                           0x08001acd   Thumb Code    56  tim.o(.text.tim_delay_init)
+    [Anonymous Symbol]                       0x08001acc   Section        0  tim.o(.text.tim_delay_init)
+    __arm_cp.33_0                            0x08001b04   Number         4  tim.o(.text.tim_delay_init)
+    timer_bounce_init                        0x08001b09   Thumb Code    76  tim.o(.text.timer_bounce_init)
+    [Anonymous Symbol]                       0x08001b08   Section        0  tim.o(.text.timer_bounce_init)
+    __arm_cp.34_0                            0x08001b54   Number         4  tim.o(.text.timer_bounce_init)
+    __arm_cp.34_1                            0x08001b58   Number         4  tim.o(.text.timer_bounce_init)
+    __arm_cp.34_2                            0x08001b5c   Number         4  tim.o(.text.timer_bounce_init)
+    [Anonymous Symbol]                       0x08001b60   Section        0  tim.o(.text.timers_ini)
+    [Anonymous Symbol]                       0x08001b70   Section        0  drive.o(.text.turn_drive_soft_start)
+    [Anonymous Symbol]                       0x08001baa   Section        0  drive.o(.text.turn_drive_start)
+    [Anonymous Symbol]                       0x08001bb4   Section        0  drive.o(.text.turn_drive_stop)
+    .text_divfast                            0x08001bbc   Section      502  aeabi_sdivfast.o(.text_divfast)
+    i._is_digit                              0x08001db2   Section        0  __printf_wp.o(i._is_digit)
+    maptable                                 0x08001dc0   Data          17  __printf_flags_wp.o(.constdata)
+    .constdata                               0x08001dc0   Section       17  __printf_flags_wp.o(.constdata)
+    OFFSET_TAB_CCMRx                         0x080029ce   Data           7  tim.o(.rodata.OFFSET_TAB_CCMRx)
+    [Anonymous Symbol]                       0x080029ce   Section        0  tim.o(.rodata.OFFSET_TAB_CCMRx)
+    SHIFT_TAB_ICxx                           0x080029d5   Data           7  tim.o(.rodata.SHIFT_TAB_ICxx)
+    [Anonymous Symbol]                       0x080029d5   Section        0  tim.o(.rodata.SHIFT_TAB_ICxx)
     .bss                                     0x20000010   Section       96  libspace.o(.bss)
     SSD1306.0                                0x20000080   Data           2  ssd1306.o(.bss.SSD1306.0)
     [Anonymous Symbol]                       0x20000080   Section        0  ssd1306.o(.bss.SSD1306.0)
@@ -2215,26 +2215,26 @@ Image Symbol Table
     i2c_write_buffer_8bit_registr            0x08001691   Thumb Code    80  i2c.o(.text.i2c_write_buffer_8bit_registr)
     i2c_write_byte                           0x080016e1   Thumb Code    60  i2c.o(.text.i2c_write_byte)
     main                                     0x08001721   Thumb Code    80  main.o(.text.main)
-    main_loop                                0x08001779   Thumb Code   144  drive.o(.text.main_loop)
-    read_enc_data                            0x0800180d   Thumb Code    92  encoder.o(.text.read_enc_data)
-    repeat_time                              0x0800186d   Thumb Code    36  tim.o(.text.repeat_time)
-    scan_dir_GPIO                            0x08001891   Thumb Code    14  button.o(.text.scan_dir_GPIO)
-    scan_direction                           0x080018a1   Thumb Code   116  button.o(.text.scan_direction)
-    scan_pedal                               0x0800191d   Thumb Code   132  button.o(.text.scan_pedal)
-    setup_turn                               0x080019bd   Thumb Code    36  drive.o(.text.setup_turn)
-    ssd1306_Init                             0x080019e5   Thumb Code   180  ssd1306.o(.text.ssd1306_Init)
-    ssd1306_SendCommand                      0x08001aa1   Thumb Code    20  ssd1306_interface.o(.text.ssd1306_SendCommand)
-    ssd1306_SendDataBuffer                   0x08001ab9   Thumb Code    16  ssd1306_interface.o(.text.ssd1306_SendDataBuffer)
-    timers_ini                               0x08001b5d   Thumb Code    16  tim.o(.text.timers_ini)
-    turn_drive_soft_start                    0x08001b6d   Thumb Code    58  drive.o(.text.turn_drive_soft_start)
-    turn_drive_start                         0x08001ba7   Thumb Code    10  drive.o(.text.turn_drive_start)
-    turn_drive_stop                          0x08001bb1   Thumb Code     8  drive.o(.text.turn_drive_stop)
-    __aeabi_uidiv                            0x08001bb9   Thumb Code    68  aeabi_sdivfast.o(.text_divfast)
-    __aeabi_idiv                             0x08001bfd   Thumb Code   434  aeabi_sdivfast.o(.text_divfast)
-    _is_digit                                0x08001daf   Thumb Code    14  __printf_wp.o(i._is_digit)
-    Font16x26                                0x08001dce   Data        3068  fonts.o(.rodata.Font16x26)
-    Region$$Table$$Base                      0x080029d8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080029f8   Number         0  anon$$obj.o(Region$$Table)
+    main_loop                                0x08001779   Thumb Code   148  drive.o(.text.main_loop)
+    read_enc_data                            0x08001811   Thumb Code    92  encoder.o(.text.read_enc_data)
+    repeat_time                              0x08001871   Thumb Code    36  tim.o(.text.repeat_time)
+    scan_dir_GPIO                            0x08001895   Thumb Code    14  button.o(.text.scan_dir_GPIO)
+    scan_direction                           0x080018a5   Thumb Code   116  button.o(.text.scan_direction)
+    scan_pedal                               0x08001921   Thumb Code   132  button.o(.text.scan_pedal)
+    setup_turn                               0x080019c1   Thumb Code    36  drive.o(.text.setup_turn)
+    ssd1306_Init                             0x080019e9   Thumb Code   180  ssd1306.o(.text.ssd1306_Init)
+    ssd1306_SendCommand                      0x08001aa5   Thumb Code    20  ssd1306_interface.o(.text.ssd1306_SendCommand)
+    ssd1306_SendDataBuffer                   0x08001abd   Thumb Code    16  ssd1306_interface.o(.text.ssd1306_SendDataBuffer)
+    timers_ini                               0x08001b61   Thumb Code    16  tim.o(.text.timers_ini)
+    turn_drive_soft_start                    0x08001b71   Thumb Code    58  drive.o(.text.turn_drive_soft_start)
+    turn_drive_start                         0x08001bab   Thumb Code    10  drive.o(.text.turn_drive_start)
+    turn_drive_stop                          0x08001bb5   Thumb Code     8  drive.o(.text.turn_drive_stop)
+    __aeabi_uidiv                            0x08001bbd   Thumb Code    68  aeabi_sdivfast.o(.text_divfast)
+    __aeabi_idiv                             0x08001c01   Thumb Code   434  aeabi_sdivfast.o(.text_divfast)
+    _is_digit                                0x08001db3   Thumb Code    14  __printf_wp.o(i._is_digit)
+    Font16x26                                0x08001dd2   Data        3068  fonts.o(.rodata.Font16x26)
+    Region$$Table$$Base                      0x080029dc   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080029fc   Number         0  anon$$obj.o(Region$$Table)
     Font_16x26                               0x20000000   Data           8  fonts.o(.data.Font_16x26)
     SystemCoreClock                          0x20000008   Data           4  system_stm32f0xx.o(.data.SystemCoreClock)
     __libspace_start                         0x20000010   Data          96  libspace.o(.bss)
@@ -2255,9 +2255,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000b1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002a08, Max: 0x00004000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002a10, Max: 0x00004000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000029f8, Max: 0x00004000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000029fc, Max: 0x00004000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2482,62 +2482,62 @@ Memory Map of the image
     0x08001690   0x08001690   0x00000050   Code   RO          205    .text.i2c_write_buffer_8bit_registr  i2c.o
     0x080016e0   0x080016e0   0x00000040   Code   RO          199    .text.i2c_write_byte  i2c.o
     0x08001720   0x08001720   0x00000058   Code   RO           99    .text.main          main.o
-    0x08001778   0x08001778   0x00000094   Code   RO           47    .text.main_loop     drive.o
-    0x0800180c   0x0800180c   0x00000060   Code   RO           89    .text.read_enc_data  encoder.o
-    0x0800186c   0x0800186c   0x00000024   Code   RO          292    .text.repeat_time   tim.o
-    0x08001890   0x08001890   0x0000000e   Code   RO           17    .text.scan_dir_GPIO  button.o
-    0x0800189e   0x0800189e   0x00000002   PAD
-    0x080018a0   0x080018a0   0x0000007c   Code   RO           15    .text.scan_direction  button.o
-    0x0800191c   0x0800191c   0x00000090   Code   RO           11    .text.scan_pedal    button.o
-    0x080019ac   0x080019ac   0x0000000e   Code   RO           13    .text.scan_pedal_GPIO  button.o
-    0x080019ba   0x080019ba   0x00000002   PAD
-    0x080019bc   0x080019bc   0x00000028   Code   RO           39    .text.setup_turn    drive.o
-    0x080019e4   0x080019e4   0x000000bc   Code   RO          714    .text.ssd1306_Init  ssd1306.o
-    0x08001aa0   0x08001aa0   0x00000018   Code   RO          767    .text.ssd1306_SendCommand  ssd1306_interface.o
-    0x08001ab8   0x08001ab8   0x00000010   Code   RO          771    .text.ssd1306_SendDataBuffer  ssd1306_interface.o
-    0x08001ac8   0x08001ac8   0x0000003c   Code   RO          304    .text.tim_delay_init  tim.o
-    0x08001b04   0x08001b04   0x00000058   Code   RO          306    .text.timer_bounce_init  tim.o
-    0x08001b5c   0x08001b5c   0x00000010   Code   RO          300    .text.timers_ini    tim.o
-    0x08001b6c   0x08001b6c   0x0000003a   Code   RO           43    .text.turn_drive_soft_start  drive.o
-    0x08001ba6   0x08001ba6   0x0000000a   Code   RO           41    .text.turn_drive_start  drive.o
-    0x08001bb0   0x08001bb0   0x00000008   Code   RO           45    .text.turn_drive_stop  drive.o
-    0x08001bb8   0x08001bb8   0x000001f6   Code   RO          824    .text_divfast       c_p.l(aeabi_sdivfast.o)
-    0x08001dae   0x08001dae   0x0000000e   Code   RO          805    i._is_digit         c_p.l(__printf_wp.o)
-    0x08001dbc   0x08001dbc   0x00000011   Data   RO          808    .constdata          c_p.l(__printf_flags_wp.o)
-    0x08001dcd   0x08001dcd   0x00000001   PAD
-    0x08001dce   0x08001dce   0x00000bfc   Data   RO          703    .rodata.Font16x26   fonts.o
-    0x080029ca   0x080029ca   0x00000007   Data   RO          319    .rodata.OFFSET_TAB_CCMRx  tim.o
-    0x080029d1   0x080029d1   0x00000007   Data   RO          320    .rodata.SHIFT_TAB_ICxx  tim.o
-    0x080029d8   0x080029d8   0x00000020   Data   RO         1020    Region$$Table       anon$$obj.o
+    0x08001778   0x08001778   0x00000098   Code   RO           47    .text.main_loop     drive.o
+    0x08001810   0x08001810   0x00000060   Code   RO           89    .text.read_enc_data  encoder.o
+    0x08001870   0x08001870   0x00000024   Code   RO          292    .text.repeat_time   tim.o
+    0x08001894   0x08001894   0x0000000e   Code   RO           17    .text.scan_dir_GPIO  button.o
+    0x080018a2   0x080018a2   0x00000002   PAD
+    0x080018a4   0x080018a4   0x0000007c   Code   RO           15    .text.scan_direction  button.o
+    0x08001920   0x08001920   0x00000090   Code   RO           11    .text.scan_pedal    button.o
+    0x080019b0   0x080019b0   0x0000000e   Code   RO           13    .text.scan_pedal_GPIO  button.o
+    0x080019be   0x080019be   0x00000002   PAD
+    0x080019c0   0x080019c0   0x00000028   Code   RO           39    .text.setup_turn    drive.o
+    0x080019e8   0x080019e8   0x000000bc   Code   RO          714    .text.ssd1306_Init  ssd1306.o
+    0x08001aa4   0x08001aa4   0x00000018   Code   RO          767    .text.ssd1306_SendCommand  ssd1306_interface.o
+    0x08001abc   0x08001abc   0x00000010   Code   RO          771    .text.ssd1306_SendDataBuffer  ssd1306_interface.o
+    0x08001acc   0x08001acc   0x0000003c   Code   RO          304    .text.tim_delay_init  tim.o
+    0x08001b08   0x08001b08   0x00000058   Code   RO          306    .text.timer_bounce_init  tim.o
+    0x08001b60   0x08001b60   0x00000010   Code   RO          300    .text.timers_ini    tim.o
+    0x08001b70   0x08001b70   0x0000003a   Code   RO           43    .text.turn_drive_soft_start  drive.o
+    0x08001baa   0x08001baa   0x0000000a   Code   RO           41    .text.turn_drive_start  drive.o
+    0x08001bb4   0x08001bb4   0x00000008   Code   RO           45    .text.turn_drive_stop  drive.o
+    0x08001bbc   0x08001bbc   0x000001f6   Code   RO          824    .text_divfast       c_p.l(aeabi_sdivfast.o)
+    0x08001db2   0x08001db2   0x0000000e   Code   RO          805    i._is_digit         c_p.l(__printf_wp.o)
+    0x08001dc0   0x08001dc0   0x00000011   Data   RO          808    .constdata          c_p.l(__printf_flags_wp.o)
+    0x08001dd1   0x08001dd1   0x00000001   PAD
+    0x08001dd2   0x08001dd2   0x00000bfc   Data   RO          703    .rodata.Font16x26   fonts.o
+    0x080029ce   0x080029ce   0x00000007   Data   RO          319    .rodata.OFFSET_TAB_CCMRx  tim.o
+    0x080029d5   0x080029d5   0x00000007   Data   RO          320    .rodata.SHIFT_TAB_ICxx  tim.o
+    0x080029dc   0x080029dc   0x00000020   Data   RO         1020    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080029f8, Size: 0x000007c0, Max: 0x00001000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002a00, Size: 0x000007c0, Max: 0x00001000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080029f8   0x00000008   Data   RW          706    .data.Font_16x26    fonts.o
-    0x20000008   0x08002a00   0x00000004   Data   RW          688    .data.SystemCoreClock  system_stm32f0xx.o
-    0x2000000c   0x08002a04   0x00000004   PAD
+    0x20000000   0x08002a00   0x00000008   Data   RW          706    .data.Font_16x26    fonts.o
+    0x20000008   0x08002a08   0x00000004   Data   RW          688    .data.SystemCoreClock  system_stm32f0xx.o
+    0x2000000c   0x08002a0c   0x00000004   PAD
     0x20000010        -       0x00000060   Zero   RW          886    .bss                c_p.l(libspace.o)
     0x20000070        -       0x00000010   Zero   RW          755    .bss.LCD_buff       ssd1306.o
     0x20000080        -       0x00000002   Zero   RW          756    .bss.SSD1306.0      ssd1306.o
     0x20000082        -       0x00000002   Zero   RW          757    .bss.SSD1306.1      ssd1306.o
     0x20000084        -       0x00000001   Zero   RW          758    .bss.SSD1306.2      ssd1306.o
-    0x20000085   0x08002a04   0x00000003   PAD
+    0x20000085   0x08002a0c   0x00000003   PAD
     0x20000088        -       0x00000210   Zero   RW          754    .bss.SSD1306_Buffer  ssd1306.o
     0x20000298        -       0x00000002   Zero   RW          318    .bss.delay_ms       tim.o
-    0x2000029a   0x08002a04   0x00000002   PAD
+    0x2000029a   0x08002a0c   0x00000002   PAD
     0x2000029c        -       0x0000000c   Zero   RW          144    .bss.encoder_data   main.o
     0x200002a8        -       0x00000001   Zero   RW          316    .bss.end_bounce_pedal  tim.o
     0x200002a9        -       0x00000001   Zero   RW          317    .bss.end_bounce_toogle  tim.o
-    0x200002aa   0x08002a04   0x00000002   PAD
+    0x200002aa   0x08002a0c   0x00000002   PAD
     0x200002ac        -       0x0000000c   Zero   RW          143    .bss.number_turns   main.o
     0x200002b8        -       0x00000001   Zero   RW           24    .bss.scan_direction.toggle_state  button.o
     0x200002b9        -       0x00000001   Zero   RW           22    .bss.scan_pedal.pedal_state  button.o
     0x200002ba        -       0x00000001   Zero   RW           23    .bss.scan_pedal.status_pedal  button.o
     0x200002bb        -       0x00000001   Zero   RW           52    .bss.status         drive.o
     0x200002bc        -       0x00000002   Zero   RW          775    .bss.temp           ssd1306_interface.o
-    0x200002be   0x08002a04   0x00000002   PAD
+    0x200002be   0x08002a0c   0x00000002   PAD
     0x200002c0        -       0x00000100   Zero   RW            2    HEAP                startup_stm32f030x6.o
     0x200003c0        -       0x00000400   Zero   RW            1    STACK               startup_stm32f030x6.o
 
@@ -2550,7 +2550,7 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
        316         24          0          0          3       2572   button.o
-       392         12          0          0          1       3498   drive.o
+       396         12          0          0          1       3506   drive.o
        108          8          0          0          0       2293   encoder.o
          0          0       3068          8          0       1221   fonts.o
        136          8          0          0          0       2054   gpio.o
@@ -2570,7 +2570,7 @@ Image component sizes
       1386        136         14          0          4      10470   tim.o
 
     ----------------------------------------------------------------------
-      5704        438       3290         12       1876      78658   Object Totals
+      5708        438       3290         12       1876      78666   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         28          0          0          0         13          0   (incl. Padding)
 
@@ -2635,15 +2635,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      7436        490       3308         12       1972      79230   Grand Totals
-      7436        490       3308         12       1972      79230   ELF Image Totals
-      7436        490       3308         12          0          0   ROM Totals
+      7440        490       3308         12       1972      79238   Grand Totals
+      7440        490       3308         12       1972      79238   ELF Image Totals
+      7440        490       3308         12          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                10744 (  10.49kB)
+    Total RO  Size (Code + RO Data)                10748 (  10.50kB)
     Total RW  Size (RW Data + ZI Data)              1984 (   1.94kB)
-    Total ROM Size (Code + RO Data + RW Data)      10756 (  10.50kB)
+    Total ROM Size (Code + RO Data + RW Data)      10760 (  10.51kB)
 
 ==============================================================================
 

@@ -115,9 +115,9 @@ void main_loop (encoder_data_t * HandleEncData, turn_data_t * HandleTurnData)
 		}
 		else
 		{
-		//	drive_PWM_mod(LOWER_PERIOD_SOFT_START); //сброс периода ШИМа 
 			SET_DIR(status.prevStatusDirToogle); //установка направления вращения
-			turn_drive_soft_start  (HandleTurnData); //начало плавной генерации ШИМа
+			if (status.pwm_on == ON)
+			{	turn_drive_soft_start (HandleTurnData);	}  //начало плавной генерации ШИМа
 		}
 	}	
 	
