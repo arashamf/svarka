@@ -109,7 +109,7 @@ typedef enum
 
 #define 	LOWER_LIMIT_SOFT_START	(260UL)		//нижний предел количества оборотов, при котором  включается плавный пуск
 #define 	LOWER_PERIOD_SOFT_START	(232UL)
-#define 	STEP_PERIOD_SOFT_START	(4UL)
+#define 	STEP_PERIOD_SOFT_START	(1UL)
 
 #define 	STEP18_IN_SEC						(6480UL) 			//количество секунд в одном шаге двигателя (1,8гр)
 #define 	CIRCLE_IN_SEC						(STEP18_IN_SEC*CIRCLE_IN_STEP)	//количество секунд в одном полном обороте двигателя (360 гр)

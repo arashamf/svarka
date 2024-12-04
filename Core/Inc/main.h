@@ -101,7 +101,7 @@ void Error_Handler(void);
                                                                  0 bit  for subpriority */
 #endif
 /* USER CODE BEGIN Private defines */
-#define __USE_IWDG
+//#define __USE_IWDG
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

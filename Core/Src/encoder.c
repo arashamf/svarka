@@ -12,7 +12,7 @@
 void encoder_reset (encoder_data_t * HandleEncData) 
 {
 	int32_t encCounter = 0; //переменная для хранения данных энкодера
-	encCounter = LL_TIM_GetCounter(TIM3); //сохранение текущего показания энкодера
+	encCounter = LL_TIM_GetCounter(ENC_TIM ); //сохранение текущего показания энкодера
 	HandleEncData->currCounter_SetRotation = (32767 - ((encCounter-1) & 0xFFFF))/2; //преобразование полученного показания энкодера в формат от -10 до 10
 	HandleEncData->prevCounter_SetRotation = HandleEncData->currCounter_SetRotation; //сохранение преобразованного текущего показания энкодера в структуру установки шага поворота	
 	HandleEncData->delta = 0; //показания от энкодера обнуляются
@@ -46,7 +46,9 @@ int32_t read_enc_data (encoder_data_t * HandleEncData, turn_data_t * HandleTurnD
 		}
 		else
 		{	
-			delta = 0; 
+			//delta = 0; 
+			//HandleEncData->currCounter_SetRotation = 0;
+			//HandleEncData->prevCounter_SetRotation = 0;			
 		}
 	}	
 	return delta;

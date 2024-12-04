@@ -3,7 +3,7 @@ CompilerVersion: 6160000::V6.16::ARMCLANG
 F (startup_stm32f030x6.s)(0x672B6256)(--target=arm-arm-none-eabi -mcpu=cortex-m0 -masm=auto -c-gdwarf-4-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 536" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F030x6 SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o svarka/startup_stm32f030x6.o)
 F (..\Core\Src\button.c)(0x672B7925)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/button.o -MD)
 I (..\Core\Inc\button.h)(0x672B2458)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -29,12 +29,12 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (..\Core\Inc\tim.h)(0x672B7463)
 I (..\Core\Inc\drive.h)(0x672B246E)
-F (..\Core\Src\drive.c)(0x672C6843)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/drive.o -MD)
+F (..\Core\Src\drive.c)(0x674459B4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/drive.o -MD)
 I (..\Core\Inc\drive.h)(0x672B246E)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -60,7 +60,7 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (..\Core\Inc\gpio.h)(0x6725DBEF)
 I (..\Core\Inc\tim.h)(0x672B7463)
 I (..\Core\Inc\button.h)(0x672B2458)
@@ -71,7 +71,7 @@ I (..\Core\Inc\stanok_math.h)(0x672358B7)
 I (..\Core\Inc\encoder.h)(0x67222922)
 F (..\Core\Src\eeprom.c)(0x672B65C4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/eeprom.o -MD)
 I (..\Core\Inc\eeprom.h)(0x6656F535)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -97,11 +97,11 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (..\Core\Inc\i2c.h)(0x664DFFAB)
 F (..\Core\Src\stanok_math.c)(0x6725D22E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/stanok_math.o -MD)
 I (..\Core\Inc\stanok_math.h)(0x672358B7)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -127,11 +127,11 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x60354E1A)
-F (..\Core\Src\encoder.c)(0x6729E274)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/encoder.o -MD)
+F (..\Core\Src\encoder.c)(0x67481343)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/encoder.o -MD)
 I (..\Core\Inc\encoder.h)(0x67222922)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -157,10 +157,10 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (..\Core\Inc\tim.h)(0x672B7463)
-F (../Core/Src/main.c)(0x672B7794)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/main.o -MD)
-I (..\Core\Inc\main.h)(0x672B799B)
+F (../Core/Src/main.c)(0x67442F2F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/main.o -MD)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -186,7 +186,7 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (..\Core\Inc\i2c.h)(0x664DFFAB)
 I (..\Core\Inc\iwdg.h)(0x672B64FB)
 I (..\Core\Inc\tim.h)(0x672B7463)
@@ -200,7 +200,7 @@ I (..\Core\Inc\eeprom.h)(0x6656F535)
 I (..\Core\Inc\stanok_math.h)(0x672358B7)
 F (../Core/Src/gpio.c)(0x6729F016)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/gpio.o -MD)
 I (..\Core\Inc\gpio.h)(0x6725DBEF)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -226,10 +226,10 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 F (../Core/Src/i2c.c)(0x6725D4EF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/i2c.o -MD)
 I (..\Core\Inc\i2c.h)(0x664DFFAB)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -255,10 +255,10 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 F (../Core/Src/iwdg.c)(0x672B64F0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/iwdg.o -MD)
 I (..\Core\Inc\iwdg.h)(0x672B64FB)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -284,10 +284,10 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
-F (../Core/Src/tim.c)(0x672B798C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/tim.o -MD)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
+F (../Core/Src/tim.c)(0x674459DB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/tim.o -MD)
 I (..\Core\Inc\tim.h)(0x672B7463)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -313,12 +313,12 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (..\display\ssd1306.h)(0x665444DE)
 I (..\display\fonts.h)(0x65CF2905)
 I (..\display\ssd1306_interface.h)(0x65BB33EC)
 F (../Core/Src/stm32f0xx_it.c)(0x672B72DF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/stm32f0xx_it.o -MD)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -344,7 +344,7 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (..\Core\Inc\stm32f0xx_it.h)(0x664F4E78)
 I (..\Core\Inc\tim.h)(0x672B7463)
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_gpio.c)(0x65CF5A00)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/stm32f0xx_ll_gpio.o -MD)
@@ -463,7 +463,7 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60354E14)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h)(0x65CF59FD)
 F (..\display\fonts.c)(0x664E02B7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/fonts.o -MD)
 I (..\display\fonts.h)(0x65CF2905)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -489,10 +489,10 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 F (..\display\ssd1306.c)(0x665EC575)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/ssd1306.o -MD)
 I (..\display\ssd1306.h)(0x665444DE)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -518,13 +518,13 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (..\display\fonts.h)(0x65CF2905)
 I (..\display\ssd1306_interface.h)(0x65BB33EC)
 I (..\Core\Inc\tim.h)(0x672B7463)
 F (..\display\ssd1306_interface.c)(0x672B6600)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include -I ../display-I./RTE/_svarka-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-IC:/Users/ASkupov.CHASPROM/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F030x6 -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32F030x6 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DHSI_VALUE="8000000" -DLSI_VALUE="40000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="1" -DINSTRUCTION_CACHE_ENABLE="0" -DDATA_CACHE_ENABLE="0"-o svarka/ssd1306_interface.o -MD)
 I (..\display\ssd1306_interface.h)(0x65BB33EC)
-I (..\Core\Inc\main.h)(0x672B799B)
+I (..\Core\Inc\main.h)(0x67442FCD)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_i2c.h)(0x65CF59FF)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x65CF59FD)
 I (..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h)(0x65CF59FD)
@@ -550,5 +550,5 @@ I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_tim.h)(0x65CF59FF)
 I (..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_ll_gpio.h)(0x65CF59FF)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60354E20)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60354E24)
-I (..\Core\Inc\typedef.h)(0x672B76A5)
+I (..\Core\Inc\typedef.h)(0x67443F6E)
 I (..\Core\Inc\i2c.h)(0x664DFFAB)

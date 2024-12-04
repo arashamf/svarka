@@ -63,11 +63,11 @@ void turn_drive_soft_start (turn_data_t * HandleTurnData)
 	
 	while (period_PWM > HandleTurnData->PulsePeriod)
 	{
-		delay_us (1000);
+		delay_us (3000);
 		period_PWM -= STEP_PERIOD_SOFT_START;
 		drive_PWM_mod(period_PWM);
 	}
-	delay_us (1000);
+	delay_us (3000);
 	drive_PWM_mod((HandleTurnData->PulsePeriod));
 }
 

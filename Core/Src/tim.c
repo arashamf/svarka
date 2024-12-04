@@ -169,7 +169,7 @@ void drive_PWM_mod (uint16_t PulsePeriod)
 void drive_PWM_stop (void)
 {
 	LL_TIM_DisableCounter(PWM_TIM); //отключение таймера
-	LL_TIM_CC_DisableChannel(PWM_TIM, LL_TIM_CHANNEL_CH1); //включение канала 1 таймера
+	LL_TIM_CC_DisableChannel(PWM_TIM, LL_TIM_CHANNEL_CH1); //выключение канала 1 таймера
 }
 
 //-----------------------------------------------------------------------------------------------------//
